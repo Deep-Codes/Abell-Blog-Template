@@ -47,6 +47,12 @@ ul a {
   color: #8695ed;
   font-size: 24px;
 }
+p a {
+  margin-left: 5px;
+  text-decoration: underline;
+  color: #8695ed;
+  font-size: 24px;
+}
 
 @media screen and (max-width: 760px) {
   .container {

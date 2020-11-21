@@ -26,6 +26,11 @@
       <p class="about-text">These are some test blogs i wrote</p>
       <BlogList props={contentArray} />
       </div>
+      <p class="intro-text">
+       <a href='https://github.com/Deep-Codes/Abell-Blog-Template'>
+          Source Code of this Site
+       </a>
+       </p>
       <Footer />
     </div>
   </div>
