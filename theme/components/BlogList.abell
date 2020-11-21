@@ -1,0 +1,40 @@
+<AbellComponent>
+{{ const { contentArray } = props }}
+<template>
+    {{
+      contentArray.map(meta => `
+        <div>
+        <h3><a href="${meta.$path}/">${meta.title}</a></h3>
+        <p class="date">${meta.$createdAt.toDateString()}</p>
+        <p class="excerpt">${meta.description}</p>
+        </div>
+      `);
+    }}
+</template>
+
+<style inlined>
+div{
+  width: 100%;
+  padding: 10px 10px;
+  margin: 15px 0px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #262627 10%, #222122 100%);
+}
+h3 a{
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  color: #9ab3f5;
+}
+.date{
+   color: #a6b1e1;
+   margin-top:5px;
+}
+.excerpt{
+  font-weight: 400;
+  margin-top: 10px;
+  color: #dcd6f7;
+}
+</style>
+</AbellComponent>

@@ -1,0 +1,71 @@
+{{
+  const { globalMeta, meta, importContent, $root ,contentArray ,contentObj  } = Abell;
+  
+  const Navbar = require('../components/Navbar.abell')
+  const Footer = require('../components/Footer.abell')
+}}
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
+      <link rel="icon" href="{{$root}}/assets/icon.svg"/>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script> 
+    <link rel="stylesheet" href="{{$root}}/styles/styles.css"/>
+    <link rel="stylesheet" href="{{$root}}/styles/blog.css"/>
+  <title>{{ meta.title }} - {{ globalMeta.title }}</title>
+</head>
+<body>
+  <div id="page">
+    <Navbar props={
+    shortName: globalMeta.shortName,
+    $root
+    }  
+    />
+    <div class='container'>
+
+      <div class="blog-container">
+          {{ importContent(`${meta.$path}/index.md`) }}
+          {{
+            // Resolve pagination slugs
+            let paginationArr = [];
+            let titleArr = [];
+            contentArray.forEach((blog)=> titleArr.push(blog.$path))
+            const resolvePagination = () => {
+              let indexOfBlog = contentArray.findIndex((blog)=> {
+                return (blog.$path === meta.$path);
+              })
+              if(indexOfBlog > 0 && indexOfBlog < contentArray.length ) paginationArr = [indexOfBlog-1 ,indexOfBlog+1 ];
+              if(indexOfBlog === 0) paginationArr = [contentArray.length-1 , indexOfBlog+1];
+              if(indexOfBlog === contentArray.length-1 ) paginationArr = [0 , 1];
+            }
+            resolvePagination();
+            let titleFinalArr =[]
+            paginationArr.forEach((ele)=> {
+              titleFinalArr.push(titleArr[ele]) 
+            })
+            // console.log(titleFinalArr);
+          }}
+          <div class="pagination-container">
+          {{
+          titleFinalArr.map(meta => /* html */`
+               <a href=/${meta} class="pagination-item" />
+                ${meta}
+               </a>
+            `);
+          }}
+          </div>
+      </div>
+    </div>
+    <Footer />
+  </div>
+
+  <script>
+  hljs.initHighlightingOnLoad();
+
+  </script>
+  
+</body>
+</html>

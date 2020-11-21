@@ -1,0 +1,33 @@
+{{
+  const { globalMeta, contentArray, $root } = Abell;
+  // Import Components
+  const Navbar = require('./components/Navbar.abell');
+  const Footer = require('./components/Footer.abell');
+  const BlogList = require('./components/BlogList.abell');
+}}
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="{{$root}}/assets/icon.svg"/>
+   <link rel="stylesheet" href="{{$root}}/styles/styles.css"/>
+  <title>{{ globalMeta.title }}</title>
+</head>
+<body>
+  <div id="page">
+    <Navbar props={
+    shortName: globalMeta.shortName,
+    $root
+    }  
+    />
+    <div class='container'>    
+      <div class="index-info"> 
+      <h1 class="heading">El Blogs</h1>
+      <p class="about-text">These are some test blogs i wrote</p>
+      <BlogList props={contentArray} />
+      </div>
+      <Footer />
+    </div>
+  </div>
+</body>
+</html>

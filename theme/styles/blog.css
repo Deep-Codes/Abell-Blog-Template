@@ -1,0 +1,68 @@
+.blog-container {
+  margin-top: 40px;
+  color: #dcd6f7;
+}
+h1 {
+  font-size: 70px;
+  background: linear-gradient(129deg, #9ab3f5 8%, #7579e7 44%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+p {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #a59dc7;
+  font-weight: 700;
+}
+strong {
+  font-size: 30px;
+}
+h2 {
+  margin: 10px 0px;
+}
+a {
+  text-decoration: underline;
+  color: #7579e7;
+}
+ul {
+  list-style: none;
+}
+pre {
+  border: none;
+  margin: 10px 0px;
+}
+code {
+  background-color: #1b1b1d;
+  color: #d6e0f0;
+  border-radius: 0.3rem;
+  padding: 2px 2px 5px;
+  white-space: nowrap;
+}
+
+.hljs {
+  background-color: #1b1b1d;
+  color: #d6e0f0;
+}
+
+pre code {
+  white-space: inherit;
+}
+
+pre {
+  background-color: #3f4047;
+  padding: 5px;
+  border-radius: 0.3em;
+}
+.pagination-container {
+  max-width: 760px;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
+}
+.pagination-item {
+  opacity: 0.6;
+  font-size: 20px;
+}

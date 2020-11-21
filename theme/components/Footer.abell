@@ -1,0 +1,18 @@
+<AbellComponent>
+<template>
+  <footer>
+    Created with Abell by DeepCodes
+  </footer>
+</template>
+
+<style>
+  footer {
+    text-align: center;
+    color: #a6b1e1;
+    font-weight: bold;
+    padding: 20px 0px;
+
+  }
+</style>
+
+</AbellComponent>
