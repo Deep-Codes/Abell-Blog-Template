@@ -1,5 +1,7 @@
 ## 🚀 Abell Blog Template
 
+[Preview it Live](https://abell-blog.netlify.app/)
+
 ![Screeshoot](ss.png)
 
 ### About Abell :
